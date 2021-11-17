@@ -1,0 +1,22 @@
+<!-- Importo la Macro 'macro_for.html' e dopo gli assegno un alias 'user_info_view'-->
+{% import "macro_for.html" as user_info_view %}
+
+<html>
+<head>
+    <title>Flask JINJA2</title>
+</head>
+
+<body>
+<!--Per definire un istruzione  dobbiamo racchiuderla fra parentesi graffe-->
+{% if user %} <!--Istruzione condizionale- > se user!=null allora esegue il blocco sottostante -->
+    <!--il valore 'capitalize' è un filtro di JINJA che mette in MAIUSCOLO la prima lettera del parametro 'user' -->
+    <h1>Hello {{user | capitalize}} by JINJA2</h1>
+
+    <!--Richiamo la macro e gli passo il parametro 'user_info' che ricevo dallo script Python-->
+     {{user_info_view.render_info(user_info)}}
+{% else %}
+    <h1>It seems I don't jnow you</h1>
+{% endif %}
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 from flask import Flask
-from  flask import abort, redirect
+from flask import abort, redirect
 
 app = Flask(__name__) # Il costruttore prende il nome principale dell'applicazione, che si ottiene con:  __name__
 

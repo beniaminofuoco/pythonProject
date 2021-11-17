@@ -1,0 +1,10 @@
+<!-- Definiamo il nome della macro 'reader_info' e il relativo parametro che userà-->
+{% macro render_info(user_info) %}
+
+ <ul> <!--Con questo tag creiamo una lista -->
+    {% for info in user_info %} <!-- Ciclo for per ciclare sulla lista user_info-->
+    <li>{{info}}</li>
+    {% endfor %}
+</ul>
+
+{% endmacro %} <!-- chiudo la macro)
