@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Signup</title>
+</head>
+<body>
+<div>
+    <form method="POST">
+        {{form.hidden_tag()}}
+        </br>
+        {{form.email.label}} {{form.email}}
+        </br>
+        {{form.username.label}} {{form.username}}
+        </br>
+        {{form.password.label}} {{form.password}}
+        </br>
+        {{form.confirm_password.label}} {{form.confirm_password}}
+        </br>
+        {{form.submit}}
+    </form>
+</div>
+</body>
+</html>
