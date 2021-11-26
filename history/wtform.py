@@ -9,6 +9,7 @@ app = Flask(__name__) # Il costruttore prende il nome principale dell'applicazio
 # questa chiave ci permette di evitare richieste fraudolente al nostro form
 app.config["SECRET_KEY"] = "a long and safe secret key"
 
+
 # methods ci permtte di specificare il tipo di richiesta, di default è GET, nel nostro caso ci serve fare una POST
 @app.route('/', methods=['GET', 'POST'])
 def signup():

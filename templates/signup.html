@@ -1,22 +1,25 @@
-<html xmlns="http://www.w3.org/1999/html">
-<head>
-    <title>Signup</title>
-</head>
-<body>
-<div>
-    <form method="POST">
-        {{form.hidden_tag()}}
-        </br>
-        {{form.email.label}} {{form.email}}
-        </br>
-        {{form.username.label}} {{form.username}}
-        </br>
-        {{form.password.label}} {{form.password}}
-        </br>
-        {{form.confirm_password.label}} {{form.confirm_password}}
-        </br>
-        {{form.submit}}
-    </form>
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<!-- La funzione super è analoga a quella Java, esegue tutte le funzioni importate nelle librerie prima di eseguire le nostre-->
+{% block head %}
+{{ super() }}
+    <title>FlaskAsk | Signup </title>
+    <!--Nella seguente riga importiamo il css all'interno della cartella static utilizzando la funzione url_form -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="row main-login">
+    <h1>FlaskAsk</h1>
+    <h3 class="title">Welcome</h3>
+    <div class="main-form">
+        <div class="col-md-4 col-lg-offset-4">
+            <!-- la macro quick_form sostituisce tutto il codice scritto in precedenza per renderizzare il form-->
+            {{wtf.quick_form(form)}}
+        </div>
+    </div>
 </div>
-</body>
-</html>
+{% endblock %}
+
+
