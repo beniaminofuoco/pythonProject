@@ -4,7 +4,7 @@
 <!-- La funzione super è analoga a quella Java, esegue tutte le funzioni importate nelle librerie prima di eseguire le nostre-->
 {% block head %}
 {{ super() }}
-    <title>FlaskAsk | Signup </title>
+    <title>FlaskAsk | Login </title>
     <!--Nella seguente riga importiamo il css all'interno della cartella static utilizzando la funzione url_form -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
 {% endblock %}
@@ -12,16 +12,14 @@
 {% block content %}
 <div class="row main-login">
     <h1>FlaskAsk</h1>
-    <h3 class="title">Welcome</h3>
+    <h3 class="title">Welcome back</h3>
     <div class="main-form">
         <div class="col-md-4 col-lg-offset-4">
             <!-- la macro quick_form sostituisce tutto il codice scritto in precedenza per renderizzare il form-->
             {{wtf.quick_form(form)}}
             <br/>
-            <a href="{{ url_for('login') }}">Already have an account</a>
+            <a href="{{ url_for('signup') }}">Don't have an account</a>
         </div>
     </div>
 </div>
 {% endblock %}
-
-
